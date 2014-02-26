@@ -126,7 +126,7 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
             capabilities.setCapability(CapabilityType.VERSION, version);
         }
         capabilities.setCapability(CapabilityType.PLATFORM, os);
-        capabilities.setCapability("name", "Sauce Sample Test");
+        capabilities.setCapability("name", "Sauce Sample Test - Soulmates");
         this.driver = new RemoteWebDriver(
                 new URL("http://" + authentication.getUsername() + ":" + authentication.getAccessKey() + "@ondemand.saucelabs.com:80/wd/hub"),
                 capabilities);
@@ -139,10 +139,10 @@ public class SampleSauceTest implements SauceOnDemandSessionIdProvider {
      * @throws Exception
      */
     @Test
-    public void amazon() throws Exception {
-        driver.get("http://www.amazon.com/");
-        assertEquals("Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more", driver.getTitle());
-    }
+    public void soulmates() throws Exception {
+        driver.get("https://soulmates.theguardian.com/");
+        assertEquals("Online dating site and dating agency - Guardian Soulmates", driver.getTitle());
+    } 
 
     /**
      * Closes the {@link WebDriver} session.
